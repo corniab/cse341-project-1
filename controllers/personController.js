@@ -1,6 +1,18 @@
 // Send fullname
-fullName = (req, res) => {
-	res.send("<h1>Ben Cornia</h1>");
+const fullName = (req, res) => {
+	// res.json({
+	// 	fName: "Ben",
+	// 	lName: "Cornia",
+	// 	email: "ben@exampl.coms",
+	// });
+	res.send("Ben Cornia");
 };
 
-module.exports = { fullName };
+// Send job
+const job = (req, res) => {
+	res.json({
+		job: "Student",
+	});
+};
+
+module.exports = { fullName, job };
