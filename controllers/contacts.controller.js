@@ -16,7 +16,6 @@ async function getContactById(req, res) {
 	console.log("Getting contact by id...");
 	let { id } = req.params;
 	id = Number(id);
-	console.log(id);
 	const contact = await findContactById(id);
 	res.set({ "Content-Type": "application/json" });
 	res.json(contact);
