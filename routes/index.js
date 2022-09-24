@@ -1,11 +1,13 @@
 const express = require("express");
+const contactsRouter = require("./contacts.route");
 const router = express.Router();
-const { fullName, job } = require("../controllers/personController.js");
 
-// GET full name.
-router.get("/", fullName);
+// Return first and last name at root.
+router.get("/", (req, res) => {
+	res.send("Ben Cornia");
+});
 
-// GET job.
-router.get("/job", job);
+// GET contacts
+router.use("/contacts", contactsRouter);
 
 module.exports = router;
