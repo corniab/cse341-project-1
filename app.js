@@ -8,6 +8,10 @@ const app = express();
 // Specify port.
 const port = process.env.PORT || 3000;
 
+// Use expressjs for parsing json
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // Direct requests for root directory to router function.
 app.use("/", router);
 

@@ -15,4 +15,18 @@ async function findContactById(id) {
 	return result;
 }
 
-module.exports = { findAllContacts, findContactById };
+
+async function createContact(newContact) {
+	const result = await collection.insertOne(newContact)
+	return result;
+}
+
+async function updateContact() {
+
+}
+
+async function deleteContact() {
+
+}
+
+module.exports = { findAllContacts, findContactById, createContact, updateContact, deleteContact };

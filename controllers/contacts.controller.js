@@ -1,4 +1,4 @@
-const { findAllContacts, findContactById } = require("../db/contacts.db.js");
+const { findAllContacts, findContactById, createContact, updateContact, deleteContact } = require("../db/contacts.db.js");
 
 /**
  * Invokes the findAllContacts database function.
@@ -21,4 +21,31 @@ async function getContactById(req, res) {
 	res.json(contact);
 }
 
-module.exports = { getAllContacts, getContactById };
+async function postContact(req, res) {
+	console.log("Creating a new contact...");
+	createContact(req.body)
+		.then(result => {
+			if(result.acknowledged) {
+				res.status(201);
+				res.json({"contactId": result.insertedId})
+			} else {
+				res.status(400);
+				throw Error("Failed to insert contact");
+			}
+		})
+		.catch(error => console.log(error));
+};
+
+async function putById(req, res) {
+
+}
+
+async function deleteById(req, res) {
+
+}
+
+
+
+
+
+module.exports = { getAllContacts, getContactById, postContact, putById, deleteById };
