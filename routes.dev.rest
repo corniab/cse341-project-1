@@ -30,13 +30,17 @@ Content-Type: application/json
 
 // ---------------------------------------------------------------PUT REQUESTS
 ###
-PUT http://localhost:3000/contacts/633b3c7d6926a30879a3fab6 HTTP/1.1
+PUT http://localhost:3000/contacts/633b53f32e1ae8f990ecb371 HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "Blah blah"
+    "firstName": "hello",
+    "lastName": "world",
+    "email": "hello@world.com",
+    "favoriteColor": "blue",
+    "birthday": "infinity"
 }
 
 // ---------------------------------------------------------------PUT REQUESTS
 ###
-DELETE http://localhost:3000/contacts/632e5172b0b44981ff3bd5e5 HTTP/1.1
+DELETE http://localhost:3000/contacts/633b53f32e1ae8f990ecb371 HTTP/1.1

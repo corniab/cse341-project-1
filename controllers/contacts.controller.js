@@ -28,7 +28,7 @@ async function postContact(req, res) {
 				res.status(201);
 				res.json({"contactId": result.insertedId})
 			} else {
-				res.status(400);
+				res.sendStatus(400);
 				throw Error("Failed to insert contact");
 			}
 		})
@@ -40,9 +40,9 @@ async function putById(req, res) {
 	updateContact(req.params.id, req.body)
 		.then(result => {
 			if(result.acknowledged) {
-				res.status(204);
+				res.sendStatus(204);
 			} else {
-				res.status(400);
+				res.sendStatus(400);
 				throw Error("Failed to update contact")
 			}
 		})
@@ -56,10 +56,9 @@ async function deleteById(req, res) {
 	deleteContact(req.params.id)
 		.then(result => {
 			if(result.acknowledged) {
-				res.status(204);
-				console.log('deletion successful')
+				res.sendStatus(204);
 			} else {
-				res.status(400);
+				res.sendStatus(400);
 				throw Error("Failed to delete contact")
 			}
 		})
