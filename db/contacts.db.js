@@ -1,4 +1,5 @@
 const { connection } = require("./connection.js");
+const ObjectId = require('mongodb').ObjectId;
 
 const collection = connection.client.db("nodeApp").collection("contacts");
 /**
@@ -11,7 +12,8 @@ async function findAllContacts() {
 }
 
 async function findContactById(id) {
-	const result = await collection.findOne({ id: id });
+	const objectId = new ObjectId(id)
+	const result = await collection.findOne({ _id: objectId });
 	return result;
 }
 
