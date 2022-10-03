@@ -23,8 +23,10 @@ async function createContact(newContact) {
 	return result;
 }
 
-async function updateContact() {
-
+async function updateContact(id, requestBody) {
+	const objectId = new ObjectId(id);
+	const result = await collection.updateOne({ _id: objectId }, { $set: requestBody});
+	return result;
 }
 
 async function deleteContact() {

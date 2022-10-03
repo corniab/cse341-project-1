@@ -36,6 +36,18 @@ async function postContact(req, res) {
 };
 
 async function putById(req, res) {
+	console.log("Updating contact...");
+	updateContact(req.params.id, req.body)
+		.then(result => {
+			if(result.acknowledged) {
+				res.status(204);
+			} else {
+				res.status(400);
+				throw Error("Failed to update contact")
+			}
+		})
+		.catch(error => console.log(error));
+	
 
 }
 
