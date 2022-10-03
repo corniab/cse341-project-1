@@ -1,4 +1,6 @@
 // PRODUCTION
+
+// ------------------------------------------------------------------------GET
 ###
 GET https://project-1-ux8i.onrender.com/
 ###
@@ -12,3 +14,33 @@ GET https://project-1-ux8i.onrender.com/contacts/2
 
 ###
 GET https://project-1-ux8i.onrender.com/contacts/3
+
+// ------------------------------------------------------------------------POST
+###
+POST https://project-1-ux8i.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Jack",
+    "lastName": "Johnson",
+    "email": "jack@jackjohnsonmusic.com",
+    "favoriteColor": "yellow",
+    "birthday": "October 3"
+}
+
+// ------------------------------------------------------------------------PUT 
+###
+PUT https://project-1-ux8i.onrender.com/contacts/633b53f32e1ae8f990ecb371 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "hello",
+    "lastName": "world",
+    "email": "hello@world.com",
+    "favoriteColor": "blue",
+    "birthday": "infinity"
+}
+
+// ------------------------------------------------------------------------DELETE
+###
+DELETE https://project-1-ux8i.onrender.com/contacts/633b53f32e1ae8f990ecb371 HTTP/1.1

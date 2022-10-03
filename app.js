@@ -1,5 +1,6 @@
 const router = require("./routes");
 const express = require("express");
+const BodyParser = require("body-parser");
 const { connection } = require("./db/connection.js");
 
 // Create express application.
@@ -9,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Use expressjs for parsing json
-app.use(express.json());
+app.use(BodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Direct requests for root directory to router function.
