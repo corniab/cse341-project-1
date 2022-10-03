@@ -36,3 +36,7 @@ Content-Type: application/json
 {
     "firstName": "Blah blah"
 }
+
+// ---------------------------------------------------------------PUT REQUESTS
+###
+DELETE http://localhost:3000/contacts/632e5172b0b44981ff3bd5e5 HTTP/1.1

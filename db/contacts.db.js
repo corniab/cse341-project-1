@@ -29,8 +29,10 @@ async function updateContact(id, requestBody) {
 	return result;
 }
 
-async function deleteContact() {
-
+async function deleteContact(id) {
+	const objectId = new ObjectId(id);
+	const result = await collection.deleteOne({ _id: objectId });
+	return result;
 }
 
 module.exports = { findAllContacts, findContactById, createContact, updateContact, deleteContact };

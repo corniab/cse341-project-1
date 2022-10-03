@@ -52,7 +52,18 @@ async function putById(req, res) {
 }
 
 async function deleteById(req, res) {
-
+	console.log("Deleting contact...");
+	deleteContact(req.params.id)
+		.then(result => {
+			if(result.acknowledged) {
+				res.status(204);
+				console.log('deletion successful')
+			} else {
+				res.status(400);
+				throw Error("Failed to delete contact")
+			}
+		})
+		.catch(error => console.log(error));
 }
 
 
