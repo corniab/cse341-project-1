@@ -7,6 +7,7 @@ const collection = connection.client.db("nodeApp").collection("contacts");
  * @returns
  */
 async function findAllContacts() {
+	console.log("Getting contacts from database...")
 	const result = await collection.find({}).toArray();
 	return result;
 }

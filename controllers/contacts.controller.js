@@ -7,9 +7,23 @@ const { findAllContacts, findContactById, createContact, updateContact, deleteCo
  */
 async function getAllContacts(req, res) {
 	console.log("Getting all contacts...");
-	const contacts = await findAllContacts();
-	res.set({ "Content-Type": "application/json" });
-	res.json(contacts);
+	findAllContacts()
+		.then(contacts => {
+			if(contacts) {
+				console.log("Contacts received...")
+				res.set({ "Content-Type": "application/json" });
+				res.json(contacts);
+			}
+			else {
+				throw Error("Can't get contacts")
+			}
+
+			}
+		)
+		.catch(error => {
+			console.log(error)
+		});
+
 }
 
 async function getContactById(req, res) {
