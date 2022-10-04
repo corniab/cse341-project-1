@@ -70,7 +70,7 @@ async function deleteById(req, res) {
 	deleteContact(req.params.id)
 		.then(result => {
 			if(result.acknowledged) {
-				res.sendStatus(204);
+				res.sendStatus(200);
 			} else {
 				res.sendStatus(400);
 				throw Error("Failed to delete contact")
