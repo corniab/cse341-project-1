@@ -2,9 +2,13 @@ const router = require("./routes");
 const express = require("express");
 const BodyParser = require("body-parser");
 const { connection } = require("./db/connection.js");
+const swaggerUI = require("swagger-ui-express")
 
 // Create express application.
 const app = express();
+
+// Serve api docs
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(require('./swagger.js')))
 
 // Specify port.
 const port = process.env.PORT || 3000;

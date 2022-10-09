@@ -2,22 +2,18 @@
 
 // ------------------------------------------------------------------------GET
 ###
-GET https://project-1-ux8i.onrender.com/
+GET https://project-1-iu81.onrender.com/
 ###
-GET https://project-1-ux8i.onrender.com/contacts
+GET https://project-1-iu81.onrender.com/contacts
 
 ###
-GET https://project-1-ux8i.onrender.com/contacts/1
+GET https://project-1-iu81.onrender.com/contacts/633cb5bc23f720f5641bb9f1
 
-###
-GET https://project-1-ux8i.onrender.com/contacts/2
 
-###
-GET https://project-1-ux8i.onrender.com/contacts/3
 
 // ------------------------------------------------------------------------POST
 ###
-POST https://project-1-ux8i.onrender.com/contacts HTTP/1.1
+POST https://project-1-iu81.onrender.com/contacts HTTP/1.1
 Content-Type: application/json
 
 {
@@ -30,7 +26,7 @@ Content-Type: application/json
 
 // ------------------------------------------------------------------------PUT 
 ###
-PUT https://project-1-ux8i.onrender.com/contacts/633b53f32e1ae8f990ecb371 HTTP/1.1
+PUT https://project-1-iu81.onrender.com/contacts/633cb5bc23f720f5641bb9f1 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -43,4 +39,4 @@ Content-Type: application/json
 
 // ------------------------------------------------------------------------DELETE
 ###
-DELETE https://project-1-ux8i.onrender.com/contacts/633b53f32e1ae8f990ecb371 HTTP/1.1
+DELETE https://project-1-iu81.onrender.com/contacts/633cb5bc23f720f5641bb9f1 HTTP/1.1

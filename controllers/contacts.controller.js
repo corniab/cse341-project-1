@@ -1,10 +1,5 @@
 const { findAllContacts, findContactById, createContact, updateContact, deleteContact } = require("../db/contacts.db.js");
 
-/**
- * Invokes the findAllContacts database function.
- * @param {*} req
- * @param {*} res
- */
 async function getAllContacts(req, res) {
 	console.log("Getting all contacts...");
 	findAllContacts()
