@@ -38,7 +38,7 @@ contactsRouter.get("/:id", getContactById);
  *      produces:
  *        - application/json
  *      parameters:
- *        - name: firstname
+ *        - name: firstName
  *          in: formData
  *          required: true
  *          type: string  
@@ -75,7 +75,7 @@ contactsRouter.post("/", postContact);
  *          required: true
  *          schema:
  *            type: string
- *        - name: firstname
+ *        - name: firstName
  *          in: formData
  *          required: false
  *          type: string  
